@@ -405,13 +405,204 @@ pre .chunk {
 </section>
   </div>
   <div class="slide hidden" id="slide-2">
-    <section class="slide-content"><h3 id="what-are-regular-expressions-">What are Regular Expressions?</h3>
+    <section class="slide-content"><h3 id="what-is-a-regular-expression-">What is a Regular Expression?</h3>
+<p>A pattern used for searching within strings.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-3">
-    <section class="slide-content"></section>
+    <section class="slide-content"><h3 id="the-format">The Format</h3>
+<p>/pattern/flags</p>
+<p>new Regex(pattern, flags)</p>
+<p>[NSRegularExpression regularExpressionWithPattern:pattern options:flags];</p>
+</section>
   </div>
   <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h3 id="the-sample">The Sample</h3>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h3 id="exact-searches">Exact Searches</h3>
+<p>/The dog chased the cat./</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h3 id="exact-searches">Exact Searches</h3>
+<p>/The dog chased the cat./</p>
+<p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h3 id="exact-searches">Exact Searches</h3>
+<p>/the dog chased the cat./</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h3 id="exact-searches">Exact Searches</h3>
+<p>/the dog chased the cat./</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while <strong>the dog chased the cat.</strong>&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="case-insensitvie-searches">Case Insensitvie Searches</h3>
+<p>/the dog chased the cat./i</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="case-insensitvie-searches">Case Insensitvie Searches</h3>
+<p>/the dog chased the cat./i</p>
+<p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="what-about-this-match-">What about this match?</h3>
+<p>/the dog chased the cat./i</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while <strong>the dog chased the cat.</strong>&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="global-searches">Global Searches</h3>
+<p>/the dog chased the cat./gi</p>
+<p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while <strong>the dog chased the cat.</strong>&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="flags">Flags</h3>
+<p><strong>i</strong> represents case insensitive</p>
+<p><strong>g</strong> represents global matching, instead of find first</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="find-the-animals">Find the Animals</h3>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="find-the-animals">Find the Animals</h3>
+<p>/(dog|cat|mouse)/gi</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="find-the-animals">Find the Animals</h3>
+<p>/(dog|cat|mouse)/gi</p>
+<p>&quot;The <strong>dog</strong> chased the <strong>cat</strong>. The <strong>cat</strong> chased the <strong>mouse</strong>. The <strong>mouse</strong> bit the <strong>dog</strong> while the <strong>dog</strong> chased the <strong>cat</strong>.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="meta-characters-">Meta Characters: (, ), |</h3>
+<p><strong>(</strong> and <strong>)</strong> represent a &quot;group&quot;</p>
+<p><strong>|</strong> represents &quot;or&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="escaping-special-characters">Escaping Special Characters</h3>
+<p>/(mark@detroitlabs.com)/i</p>
+<p>&quot;Mark Schall (<strong>mark@detroitlabs.com</strong>) | awesome presenter.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="escaping-special-characters">Escaping Special Characters</h3>
+<p>/<strong>\</strong>(mark@detroitlabs.com<strong>\</strong>)/i</p>
+<p>&quot;Mark Schall <strong>(mark@detroitlabs.com)</strong> | awesome presenter.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="find-all-instances-of-the-">Find all instances of &quot;the&quot;</h3>
+<p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="find-all-instances-of-the-">Find all instances of &quot;the&quot;</h3>
+<p>/the/gi</p>
+<p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h3 id="find-all-instances-of-the-">Find all instances of &quot;the&quot;</h3>
+<p>/the/gi</p>
+<p>&quot;<strong>The</strong> mouse bit <strong>the</strong> dog over <strong>the</strong>re, while <strong>the</strong> dog chased <strong>the</strong> cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="-the-not-there-">&quot;the&quot; not &quot;there&quot;</h3>
+<p>/\bthe\b/gi</p>
+<p>&quot;<strong>The</strong> mouse bit <strong>the</strong> dog over there, while <strong>the</strong> dog chased <strong>the</strong> cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="special-backslash-characters">Special Backslash Characters</h3>
+<p><strong>\b</strong> represents a word boundary, which includes spaces and punctuations.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="find-all-the-__-">Find all &quot;the __&quot;</h3>
+<p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h3 id="find-all-the-__-">Find all &quot;the __&quot;</h3>
+<p>/the (dog|cat|mouse)/gi</p>
+<p>&quot;<strong>The mouse</strong> bit <strong>the dog</strong> over there, while <strong>the dog</strong> chased <strong>the cat</strong>.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h3 id="find-all-the-__-">Find all &quot;the __&quot;</h3>
+<p>/the \b(dog|cat|mouse)\b/gi</p>
+<p>&quot;<strong>The mouse</strong> bit <strong>the dog</strong> over there, while <strong>the dog</strong> chased <strong>the cat</strong>.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h3 id="the-magical-__-__">The magical <strong>.</strong></h3>
+<p><strong>.</strong> represents any character</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><h3 id="a-little-lie">A little lie</h3>
+<p>/The dog chased the cat<strong>.</strong>/</p>
+<p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="a-little-lie">A little lie</h3>
+<p>/The dog chased the cat<strong>\.</strong>/</p>
+<p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h3 id="put-it-to-use">Put it to use</h3>
+<p>/the ./gi</p>
+<p>&quot;<strong>The m</strong>ouse bit <strong>the d</strong>og over there, while <strong>the d</strong>og chased <strong>the c</strong>at.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="matching-more-than-one-character">Matching more than one character</h3>
+<p><strong>*</strong> represents 0 or more</p>
+<p><strong>+</strong> represents 1 or more</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h3 id="example">Example</h3>
+<p>/the .*/gi</p>
+<p>&quot;<strong>The mouse bit the dog over there, while the dog chased the cat.</strong>&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h3 id="same-results">Same Results</h3>
+<p>/the .+/gi</p>
+<p>&quot;<strong>The mouse bit the dog over there, while the dog chased the cat.</strong>&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h3 id="use-our-word-boundaries">Use our word boundaries</h3>
+<p>/the \b.+\b/gi</p>
+<p>&quot;<strong>The mouse</strong> bit <strong>the dog</strong> over there, while <strong>the dog</strong> chased <strong>the cat</strong>.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><div class="author">
   <h1 class="name">Mark Schall</h1>
     <h3 class="twitter">
