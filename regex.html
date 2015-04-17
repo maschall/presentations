@@ -585,7 +585,7 @@ pre .chunk {
 </section>
   </div>
   <div class="slide hidden" id="slide-33">
-    <section class="slide-content"><h3 id="example">Example</h3>
+    <section class="slide-content"><h3 id="-example">* Example</h3>
 <p>/the .*/gi</p>
 <p>&quot;<strong>The mouse bit the dog over there, while the dog chased the cat.</strong>&quot;</p>
 </section>
@@ -603,6 +603,259 @@ pre .chunk {
 </section>
   </div>
   <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h3 id="the-importance-of-vs-">The importance of + vs *</h3>
+<p>/img (.*)/i vs /img (.+)/i</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="the-importance-of-vs-">The importance of + vs *</h3>
+<p>/img (.*)/i will match &quot;img &quot;</p>
+<p>/img (.+)/i will not match &quot;img &quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h3 id="expected-characters">Expected characters</h3>
+<p><strong>.</strong> matches any character including spaces, letters, numbers, punctuation, etc...</p>
+<p>Credit Cards only have numbers<br>Phone numbers have numbers (and some have letters)<br>Names only have letters</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><h3 id="expected-characters">Expected characters</h3>
+<p><strong>[</strong> and <strong>]</strong> represent a range of values to match</p>
+<p>[0123456789] - only numbers accepted<br>[abcdefghijklmnopqrstuvwxyz]</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h3 id="unicode-characters">Unicode characters</h3>
+<p><strong>\u00A9</strong>    - ©</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><h3 id="shorthand">Shorthand</h3>
+<p><strong>[</strong> and <strong>]</strong> represent a range of values to match</p>
+<p>[0-9] - only numbers accepted<br>[a-z] and [A-Z]</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h3 id="combining">Combining</h3>
+<p><strong>[</strong> and <strong>]</strong> represent a range of values to match</p>
+<p>[0-9a-zA-Z] - only numbers, lowercase and uppercase letters</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><h3 id="even-shorterhand">Even shorterhand</h3>
+<p><strong>\d</strong> - Digit, equalivalent to [0-9]</p>
+<p><strong>\w</strong> - Word, equivalent to [0-9a-zA-Z_]</p>
+<p><strong>\s</strong> - Space, equivalent to [ \t\r\n]</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h3 id="unwanted-characters">Unwanted characters</h3>
+<p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h3 id="unwanted-characters">Unwanted characters</h3>
+<p>/[^,.]+/g</p>
+<p>&quot;<strong>The mouse bit the dog over there</strong>, <strong>while the dog chased the cat</strong>.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><h3 id="word-boundary">Word boundary</h3>
+<p><strong>\b</strong> - [^,.\s]</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-47">
+    <section class="slide-content"><h3 id="unwanted-shorthand">Unwanted shorthand</h3>
+<p><strong>\D</strong> - [^\d]</p>
+<p><strong>\W</strong> - [^\w]</p>
+<p><strong>\S</strong> - [^\s]</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-48">
+    <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
+<p>&quot;555-555-5555&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-49">
+    <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
+<p>/\d+-\d+-\d+/</p>
+<p>&quot;<strong>555-555-5555</strong>&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-50">
+    <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
+<p>/\d+-\d+-\d+/</p>
+<p>&quot;You can call my cell <strong>555-555-5555</strong> at any time&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-51">
+    <section class="slide-content"><h3 id="what-if-they-don-t-use-">What if they don&#39;t use -</h3>
+<p>&quot;5555555555&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h3 id="optional-characters">Optional characters</h3>
+<p><strong>?</strong> - matches 0 or 1 instance</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
+<p>/\d+-?\d+-?\d+/g</p>
+<p>&quot;You can call my cell <strong>5555555555</strong> or my home <strong>555-555-5555</strong> at any time&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><h3 id="repeated-groups">Repeated groups</h3>
+<p>/(/d+-?)+/</p>
+<p>&quot;You can call my cell <strong>5555555555</strong> or my home <strong>555-555-5555</strong> at any time&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><h3 id="miss-matching">Miss matching</h3>
+<p>/(/d+-?)+/</p>
+<p>&quot;You can call my cell <strong>5555555555</strong> with your credit card <strong>4444-4444-4444</strong>-4444&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-56">
+    <section class="slide-content"><h3 id="matching-specific-number-of-characters">Matching specific number of characters</h3>
+<p>{3} - matches 3 and only 3 characters</p>
+<p>{3,4} - matches 3 to 4 characters</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-57">
+    <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
+<p>/\d{3}-?\d{3}-?\d{4}/</p>
+<p>&quot;You can call my cell <strong>5555555555</strong> with your credit card 4444-4444-4444-4444&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-58">
+    <section class="slide-content"><h3 id="review-thus-far">Review thus far</h3>
+<p><strong>i</strong> and <strong>g</strong> - case insensitive and global matching</p>
+<p><strong>(abc)</strong> - group matches &quot;abc&quot;
+<strong>(ab|bc)</strong> - group matching &quot;ab&quot; or &quot;bc&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-59">
+    <section class="slide-content"><h3 id="review-thus-far">Review thus far</h3>
+<p><strong>.</strong> - matches all characters<br><strong>[a-z]</strong> - match a set of characters</p>
+<p><strong>\b</strong>, <strong>\w</strong>, <strong>\d</strong>, <strong>\s</strong> - convenient shorthand
+<strong>\.</strong>, <strong>\\</strong>, <strong>\[</strong>, <strong>\)</strong> - escape special characters</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-60">
+    <section class="slide-content"><h3 id="review-thus-far">Review thus far</h3>
+<p><strong>+</strong> -  1 or more
+<strong>*</strong> - 0 or more
+<strong>?</strong> - 0 or 1
+<strong>{2,5}</strong> - at least 2 but no more than 5</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-61">
+    <section class="slide-content"><h3 id="questions-">Questions?</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-62">
+    <section class="slide-content"><h3 id="but-wait-theres-more">But wait theres more</h3>
+<p>So far we&#39;ve only talked about testing for existance, now let&#39;s find things!</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-63">
+    <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
+<p>/\d{3}-?\d{3}-?\d{4}/g - proves existance of a phone number</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-64">
+    <section class="slide-content"><h3 id="but-what-is-that-phone-number">But what is that phone number</h3>
+<p>Match - the individual result of a regex</p>
+<p>/\d{3}-?\d{3}-?\d{4}/g</p>
+<p>&quot;You can call my cell <strong>5555555555</strong> or my home <strong>555-555-5555</strong> at any time&quot;</p>
+<p>Match #1: 5555555555<br>Match #2: 555-555-5555</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-65">
+    <section class="slide-content"><h3 id="get-phone-number-with-label">Get phone number with label</h3>
+<p>/cell \d{3}-?\d{3}-?\d{4}/g</p>
+<p>&quot;You can call my <strong>cell 5555555555</strong> or my home 555-555-5555 at any time&quot;</p>
+<p>Match: cell 5555555555</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-66">
+    <section class="slide-content"><h3 id="use-groups">Use groups</h3>
+<p>/cell (\d{3}-?\d{3}-?\d{4})/g</p>
+<p>&quot;You can call my <strong>cell 5555555555</strong> or my home 555-555-5555 at any time&quot;</p>
+<p>Match: cell 5555555555
+Group 1: 5555555555</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-67">
+    <section class="slide-content"><h3 id="group-0">Group 0</h3>
+<p>/cell (\d{3}-?\d{3}-?\d{4})/g</p>
+<p>&quot;You can call my <strong>cell 5555555555</strong> or my home 555-555-5555 at any time&quot;</p>
+<p>Match: cell 5555555555
+Group 1: 5555555555
+Group 0: cell 5555555555</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-68">
+    <section class="slide-content"><h3 id="combined-groups">Combined groups</h3>
+<p>/cell ((\d{3})-?\d{3}-?\d{4})(.*)/g</p>
+<p>&quot;You can call my <strong>cell 3135555555 or my home 555-555-5555 at any time</strong>&quot;</p>
+<p>Group 1: 3135555555
+Group 2: 313
+Group 3: &quot; or my home 555-555-5555 at any time&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-69">
+    <section class="slide-content"><h3 id="named-groups-">Named groups*</h3>
+<p>/cell ((?<areaCode>\d{3})-?\d{3}-?\d{4})/g</p>
+<p>&quot;You can call my <strong>cell 3135555555</strong> or my home 555-555-5555 at any time&quot;</p>
+<p>Group 1: 3135555555
+Group 2: 313
+Group areaCode: 313</p>
+<p><em>* named groups aren&#39;t supported on every platform</em></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-70">
+    <section class="slide-content"><h3 id="ignore-group-non-capturing-group-">Ignore group (non-capturing group)</h3>
+<p>/cell (<strong>?:</strong>(\d{3})-?\d{3}-?\d{4})/g</p>
+<p>&quot;You can call my <strong>cell 3135555555</strong> or my home 555-555-5555 at any time&quot;</p>
+<p>Group 1: 313</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-71">
+    <section class="slide-content"><h3 id="postive-lookahead">Postive lookahead</h3>
+<p><strong>(?=abc)</strong></p>
+<p>/\d{3}-?\d{3}-?\d{4}(?= x\d+)/g</p>
+<p>&quot;Work: <strong>313-555-5555</strong> x345, Home: 248-555-5555&quot;</p>
+<p>Match: 313-555-5555</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-72">
+    <section class="slide-content"><h3 id="negative-lookahead">Negative lookahead</h3>
+<p><strong>(?!abc)</strong></p>
+<p>/\d{3}-?\d{3}-?\d{4}(?! x\d+)/g</p>
+<p>&quot;Work: 313-555-5555 x345, Home: <strong>248-555-5555</strong>&quot;</p>
+<p>Match: 248-555-5555</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-73">
+    <section class="slide-content"><h3 id="use-the-result-of-a-group-in-the-search">Use the result of a group in the search</h3>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-74">
+    <section class="slide-content"><h3 id="use-the-result-of-a-group-in-the-search">Use the result of a group in the search</h3>
+<p>/(\w+)\s\1/g</p>
+<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit <strong>the the</strong> dog while the dog chased the cat.&quot;</p>
+<p>Match: the the
+Group 1: the (the first one)</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-75">
+    <section class="slide-content"></section>
+  </div>
+  <div class="slide hidden" id="slide-76">
     <section class="slide-content"><div class="author">
   <h1 class="name">Mark Schall</h1>
     <h3 class="twitter">
