@@ -141,6 +141,11 @@ __.__ represents any character
 "__The dog chased the cat.__ The cat chased the mouse. The mouse bit the dog while the dog chased the cat."
 --
 ### A little lie
+/The dog chased the cat__.__/
+
+"__The dog chased the cate__rpillar. The cat chased the mouse. The mouse bit the dog while the dog chased the cat."
+--
+### A little lie
 /The dog chased the cat__\\.__/
 
 "__The dog chased the cat.__ The cat chased the mouse. The mouse bit the dog while the dog chased the cat."
@@ -155,28 +160,65 @@ __*__ represents 0 or more
 
 __+__ represents 1 or more
 --
+### + vs *
+/img (.*)/ will match "img "
+
+/img (.+)/ will not match "img " but will match "img cat"
+--
 ### * Example
 /the .*/gi
 
 "__The mouse bit the dog over there, while the dog chased the cat.__"
 --
-### Same Results
-/the .+/gi
-
-"__The mouse bit the dog over there, while the dog chased the cat.__"
+### Most Important Rule
+__Regular Expressions will match the longest possible solution__
 --
 ### Use our word boundaries
 /the \b.+\b/gi
 
 "__The mouse__ bit __the dog__ over there, while __the dog__ chased __the cat__."
 --
-### The importance of + vs *
-/img (.*)/i vs /img (.+)/i
+### Find all the mice
+The hungry mouse bit the dog. The dog barked at the mouse.
 --
-### The importance of + vs *
-/img (.*)/i will match "img "
+### Find all the mice
+/the .* mouse/i
 
-/img (.+)/i will not match "img "
+__The hungry mouse bit the dog. The dog barked at the mouse__.
+--
+### Don't be so greedy
+/the .*? mouse/i
+
+__The hungry mouse__ bit the dog. The dog barked at the mouse.
+--
+### Don't be so greedy
+/the .*? mouse/__g__i
+
+__The hungry mouse__ bit __the dog. The dog barked at the mouse__.
+--
+### Lazy matchers
+__*?__ represents 0 or more, fewest characters possible
+
+__+?__ represents 1 or more, fewest characters possible
+--
+### Multiple lines
+The dog chased the cat. 
+The cat chased the mouse. 
+The mouse bit the dog while the dog chased the cat.
+--
+### Multiple lines
+/.*/
+
+__The dog chased the cat.__   
+The cat chased the mouse.  
+The mouse bit the dog while the dog chased the cat.
+--
+### m flag
+/.*/m
+
+__The dog chased the cat.__   
+__The cat chased the mouse.__  
+__The mouse bit the dog while the dog chased the cat.__
 --
 ### Expected characters
 __.__ matches any character including spaces, letters, numbers, punctuation, etc...
@@ -243,7 +285,7 @@ __\S__ - [^\s]
 
 "You can call my cell __555-555-5555__ at any time"
 --
-### What if they don't use -
+### What if they don't use __-__
 "5555555555"
 --
 ### Optional characters
@@ -275,7 +317,9 @@ __?__ - matches 0 or 1 instance
 "You can call my cell __5555555555__ with your credit card 4444-4444-4444-4444"
 --
 ### Review thus far
-__i__ and __g__ - case insensitive and global matching
+__i__ - case insensitive  
+__g__ - global matching  
+__m__ - '.' matches across lines
 
 __(abc)__ - group matches "abc"
 __(ab|bc)__ - group matching "ab" or "bc" 
@@ -289,10 +333,12 @@ __\\b__, __\\w__, __\\d__, __\\s__ - convenient shorthand
 __\\.__, __\\\\__, __\\[__, __\\)__ - escape special characters
 --
 ### Review thus far
-__+__ -  1 or more
-__*__ - 0 or more
-__?__ - 0 or 1
-__{2,5}__ - at least 2 but no more than 5
+__+__ -  1 or more  
+__*__ - 0 or more  
+__?__ - 0 or 1  
+__*?__ - 0 or more, fewest characters possible  
+__+?__ - 1 or more, fewest characters possible  
+__{2,5}__ - at least 2 but no more than 5  
 --
 ### Questions?
 --
