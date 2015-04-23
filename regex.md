@@ -8,11 +8,10 @@ controls: false
 
 --
 # Regular Expressions
-
 --
 ### What is a Regular Expression?
 
-A pattern used for searching within strings.
+A search pattern used to match text.
 --
 ### The Format
 /pattern/flags
@@ -38,17 +37,7 @@ new Regex(pattern, flags)
 ### Exact Searches
 /the dog chased the cat./
 
-"The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat."
---
-### Exact Searches
-/the dog chased the cat./
-
 "The dog chased the cat. The cat chased the mouse. The mouse bit the dog while __the dog chased the cat.__"
---
-### Case Insensitvie Searches
-/the dog chased the cat./i
-
-"The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat."
 --
 ### Case Insensitvie Searches
 /the dog chased the cat./i
@@ -66,9 +55,9 @@ new Regex(pattern, flags)
 "__The dog chased the cat.__ The cat chased the mouse. The mouse bit the dog while __the dog chased the cat.__"
 --
 ### Flags
-__i__ represents case insensitive
+__i__ - case insensitive
 
-__g__ represents global matching, instead of find first
+__g__ - global matching, instead of find first
 --
 ### Find the Animals
 "The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat."
@@ -84,9 +73,9 @@ __g__ represents global matching, instead of find first
 "The __dog__ chased the __cat__. The __cat__ chased the __mouse__. The __mouse__ bit the __dog__ while the __dog__ chased the __cat__."
 --
 ### Meta Characters: (, ), |
-__(__ and __)__ represent a "group"
+__(__ and __)__ - a group
 
-__|__ represents "or"
+__|__ - or
 --
 ### Escaping Special Characters
 /(mark@detroitlabs.com)/i
@@ -117,7 +106,7 @@ __|__ represents "or"
 "__The__ mouse bit __the__ dog over there, while __the__ dog chased __the__ cat."
 --
 ### Special Backslash Characters
-__\\b__ represents a word boundary, which includes spaces and punctuations.
+__\\b__ - word boundary, includes spaces and punctuations.
 --
 ### Find all "the __"
 "The mouse bit the dog over there, while the dog chased the cat."
@@ -133,7 +122,7 @@ __\\b__ represents a word boundary, which includes spaces and punctuations.
 "__The mouse__ bit __the dog__ over there, while __the dog__ chased __the cat__."
 --
 ### The magical __.__
-__.__ represents any character
+__.__ - any character
 --
 ### A little lie
 /The dog chased the cat__.__/
@@ -156,9 +145,9 @@ __.__ represents any character
 "__The m__ouse bit __the d__og over there, while __the d__og chased __the c__at."
 --
 ### Matching more than one character
-__*__ represents 0 or more
+__*__ - 0 or more
 
-__+__ represents 1 or more
+__+__ - 1 or more
 --
 ### + vs *
 /img (.*)/ will match "img "
@@ -197,9 +186,9 @@ __The hungry mouse__ bit the dog. The dog barked at the mouse.
 __The hungry mouse__ bit __the dog. The dog barked at the mouse__.
 --
 ### Lazy matchers
-__*?__ represents 0 or more, fewest characters possible
+__*?__ - 0 or more, fewest characters possible
 
-__+?__ represents 1 or more, fewest characters possible
+__+?__ - 1 or more, fewest characters possible
 --
 ### Multiple lines
 The dog chased the cat. 
@@ -220,6 +209,18 @@ __The dog chased the cat.__
 __The cat chased the mouse.__  
 __The mouse bit the dog while the dog chased the cat.__
 --
+### Start and End of lines
+__^__ - start of line
+
+__$__ - end of line
+--
+### Start and End of lines
+/^The .* cat\\.$/
+
+__The dog chased the cat.__   
+The cat chased the mouse.  
+__The mouse bit the dog while the dog chased the cat.__
+--
 ### Expected characters
 __.__ matches any character including spaces, letters, numbers, punctuation, etc...
 
@@ -228,19 +229,16 @@ Phone numbers have numbers (and some have letters)
 Names only have letters
 --
 ### Expected characters
-__[__ and __]__ represent a range of values to match
+__[__ and __]__ - a range of values to match
 
 [0123456789] - only numbers accepted  
 [abcdefghijklmnopqrstuvwxyz]  
 --
-### Unicode characters
-__\\u00A9__	- ©
---
 ### Shorthand
-__[__ and __]__ represent a range of values to match
+__[__ and __]__ - a range of values to match
 
 [0-9] - only numbers accepted  
-[a-z] and [A-Z]
+[a-z] and [A-Z] - lowercase and uppercase
 --
 ### Combining
 __[__ and __]__ represent a range of values to match
@@ -271,6 +269,9 @@ __\D__ - [^\d]
 __\W__ - [^\w]
 
 __\S__ - [^\s]
+--
+### Unicode characters
+__\\u00A9__	- ©
 --
 ### Phone number example
 "555-555-5555"
@@ -336,9 +337,14 @@ __\\.__, __\\\\__, __\\[__, __\\)__ - escape special characters
 __+__ -  1 or more  
 __*__ - 0 or more  
 __?__ - 0 or 1  
+__{2,5}__ - at least 2 but no more than 5  
+--
+### Review thus far
 __*?__ - 0 or more, fewest characters possible  
 __+?__ - 1 or more, fewest characters possible  
-__{2,5}__ - at least 2 but no more than 5  
+
+__^__ - start of line  
+__$__ - end of line
 --
 ### Questions?
 --
@@ -428,13 +434,87 @@ __(?!abc)__
 Match: 248-555-5555
 --
 ### Use the result of a group in the search
-"The dog chased the cat. The cat chased the mouse. The mouse bit the the dog while the dog chased the cat."
+"The mouse bit the the dog while the dog chased the cat."
 --
 ### Use the result of a group in the search
 /(\w+)\s\1/g
 
-"The dog chased the cat. The cat chased the mouse. The mouse bit __the the__ dog while the dog chased the cat."
+"The mouse bit __the the__ dog while the dog chased the cat."
 
 Match: the the
 Group 1: the (the first one)
+--
+### Review
+__(abc)__ - a capture group  
+__(?:abc)__ - a non-capture group  
+__(?=abc)__ - positive lookahead  
+__(?!abc)__ - negatvie lookahead
+
+Groups are counted __(__ from left to right
+### Questions
+--
+### URL Example
+_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\\.\d{1,3}){3})(?!127(?:\\.\d{1,3}){3})(?!169\\.254(?:\\.\d{1,3}){2})(?!192\\.168(?:\\.\d{1,3}){2})(?!172\\.(?:1[6-9]|2\d|3[0-1])(?:\\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS
+--
+### URL Example
+/^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\\.\d{1,3}){3})(?!127(?:\\.\d{1,3}){3})(?!169\\.254(?:\\.\d{1,3}){2})(?!192\\.168(?:\\.\d{1,3}){2})(?!172\\.(?:1[6-9]|2\d|3[0-1])(?:\\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$/iuS
+--
+### URL Example
+/^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\\.\d{1,3}){3})(?!127(?:\\.\d{1,3}){3})(?!169\\.254(?:\\.\d{1,3}){2})(?!192\\.168(?:\\.\d{1,3}){2})(?!172\\.(?:1[6-9]|2\d|3[0-1])(?:\\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$/__iuS__
+
+u - utf8  
+S - optimization
+--
+### Ignore Capture Groups
+/^(__?:__(__?:__https?|ftp)://)(__?:__\S+(__?:__:\S*)?@)?(__?:__(?!10(__?:__\\.\d{1,3}){3})(?!127(__?:__\\.\d{1,3}){3})(?!169\\.254(__?:__\\.\d{1,3}){2})(?!192\\.168(__?:__\\.\d{1,3}){2})(?!172\\.(__?:__1[6-9]|2\d|3[0-1])(__?:__\\.\d{1,3}){2})(__?:__[1-9]\d?|1\d\d|2[01]\d|22[0-3])(__?:__\\.(__?:__1?\d{1,2}|2[0-4]\d|25[0-5])){2}(__?:__\\.(__?:__[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(__?:__(__?:__[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(__?:__\\.(__?:__[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(__?:__\\.(__?:__[a-z\x{00a1}-\x{ffff}]{2,})))(__?:__:\d{2,5})?(__?:__/[^\s]*)?$/
+--
+### Start and End Characters
+__/^__((https?|ftp)://)(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?__$/__
+--
+### URL Example
+((https?|ftp)://)(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?
+--
+### http, https, ftp
+__((https?|ftp)://)__(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?
+--
+### username:password@
+((https?|ftp)://)__(\S+(:\S*)?@)?__((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?
+--
+### The Domain
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))__|__(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### Don't match localhost
+__((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})__([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### IP Address
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})__([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))__|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### Subdomain / Domain
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|__(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)__
+(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### More Subdomains
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)
+__(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*__
+(\\.([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### .com, .org, .gov, etc...
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*__(\\.([a-z\x{00a1}-\x{ffff}]{2,})))__
+--
+### Repeated Pattern
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|__(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(\\.__([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### Refactored
+((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|__(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+\\.)+__(([a-z\x{00a1}-\x{ffff}]{2,})))
+--
+### Port
+((https?|ftp)://)(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+\\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))__(:\d{2,5})?__(/[^\s]*)?
+--
+### The rest of the URL
+((https?|ftp)://)(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+\\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?__(/[^\s]*)?__
+--
+### \S = [^\s]
+((https?|ftp)://)(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+\\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?__(/\S*)?__
+--
+### Questions ?
 --

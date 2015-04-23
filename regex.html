@@ -406,7 +406,7 @@ pre .chunk {
   </div>
   <div class="slide hidden" id="slide-2">
     <section class="slide-content"><h3 id="what-is-a-regular-expression-">What is a Regular Expression?</h3>
-<p>A pattern used for searching within strings.</p>
+<p>A search pattern used to match text.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-3">
@@ -436,229 +436,229 @@ pre .chunk {
   <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h3 id="exact-searches">Exact Searches</h3>
 <p>/the dog chased the cat./</p>
-<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-8">
-    <section class="slide-content"><h3 id="exact-searches">Exact Searches</h3>
-<p>/the dog chased the cat./</p>
 <p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while <strong>the dog chased the cat.</strong>&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-9">
-    <section class="slide-content"><h3 id="case-insensitvie-searches">Case Insensitvie Searches</h3>
-<p>/the dog chased the cat./i</p>
-<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-10">
+  <div class="slide hidden" id="slide-8">
     <section class="slide-content"><h3 id="case-insensitvie-searches">Case Insensitvie Searches</h3>
 <p>/the dog chased the cat./i</p>
 <p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-9">
     <section class="slide-content"><h3 id="what-about-this-match-">What about this match?</h3>
 <p>/the dog chased the cat./i</p>
 <p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while <strong>the dog chased the cat.</strong>&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-12">
+  <div class="slide hidden" id="slide-10">
     <section class="slide-content"><h3 id="global-searches">Global Searches</h3>
 <p>/the dog chased the cat./gi</p>
 <p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while <strong>the dog chased the cat.</strong>&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-11">
     <section class="slide-content"><h3 id="flags">Flags</h3>
-<p><strong>i</strong> represents case insensitive</p>
-<p><strong>g</strong> represents global matching, instead of find first</p>
+<p><strong>i</strong> - case insensitive</p>
+<p><strong>g</strong> - global matching, instead of find first</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
+  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h3 id="find-the-animals">Find the Animals</h3>
 <p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-15">
+  <div class="slide hidden" id="slide-13">
     <section class="slide-content"><h3 id="find-the-animals">Find the Animals</h3>
 <p>/(dog|cat|mouse)/gi</p>
 <p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-14">
     <section class="slide-content"><h3 id="find-the-animals">Find the Animals</h3>
 <p>/(dog|cat|mouse)/gi</p>
 <p>&quot;The <strong>dog</strong> chased the <strong>cat</strong>. The <strong>cat</strong> chased the <strong>mouse</strong>. The <strong>mouse</strong> bit the <strong>dog</strong> while the <strong>dog</strong> chased the <strong>cat</strong>.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-15">
     <section class="slide-content"><h3 id="meta-characters-">Meta Characters: (, ), |</h3>
-<p><strong>(</strong> and <strong>)</strong> represent a &quot;group&quot;</p>
-<p><strong>|</strong> represents &quot;or&quot;</p>
+<p><strong>(</strong> and <strong>)</strong> - a group</p>
+<p><strong>|</strong> - or</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-18">
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><h3 id="escaping-special-characters">Escaping Special Characters</h3>
 <p>/(mark@detroitlabs.com)/i</p>
 <p>&quot;Mark Schall (<strong>mark@detroitlabs.com</strong>) | awesome presenter.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h3 id="escaping-special-characters">Escaping Special Characters</h3>
 <p>/<strong>\</strong>(mark@detroitlabs.com<strong>\</strong>)/i</p>
 <p>&quot;Mark Schall <strong>(mark@detroitlabs.com)</strong> | awesome presenter.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h3 id="find-all-instances-of-the-">Find all instances of &quot;the&quot;</h3>
 <p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-19">
     <section class="slide-content"><h3 id="find-all-instances-of-the-">Find all instances of &quot;the&quot;</h3>
 <p>/the/gi</p>
 <p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-20">
     <section class="slide-content"><h3 id="find-all-instances-of-the-">Find all instances of &quot;the&quot;</h3>
 <p>/the/gi</p>
 <p>&quot;<strong>The</strong> mouse bit <strong>the</strong> dog over <strong>the</strong>re, while <strong>the</strong> dog chased <strong>the</strong> cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-21">
     <section class="slide-content"><h3 id="-the-not-there-">&quot;the&quot; not &quot;there&quot;</h3>
 <p>/\bthe\b/gi</p>
 <p>&quot;<strong>The</strong> mouse bit <strong>the</strong> dog over there, while <strong>the</strong> dog chased <strong>the</strong> cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-22">
     <section class="slide-content"><h3 id="special-backslash-characters">Special Backslash Characters</h3>
-<p><strong>\b</strong> represents a word boundary, which includes spaces and punctuations.</p>
+<p><strong>\b</strong> - word boundary, includes spaces and punctuations.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-23">
     <section class="slide-content"><h3 id="find-all-the-__-">Find all &quot;the __&quot;</h3>
 <p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h3 id="find-all-the-__-">Find all &quot;the __&quot;</h3>
 <p>/the (dog|cat|mouse)/gi</p>
 <p>&quot;<strong>The mouse</strong> bit <strong>the dog</strong> over there, while <strong>the dog</strong> chased <strong>the cat</strong>.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><h3 id="find-all-the-__-">Find all &quot;the __&quot;</h3>
 <p>/the \b(dog|cat|mouse)\b/gi</p>
 <p>&quot;<strong>The mouse</strong> bit <strong>the dog</strong> over there, while <strong>the dog</strong> chased <strong>the cat</strong>.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h3 id="the-magical-__-__">The magical <strong>.</strong></h3>
-<p><strong>.</strong> represents any character</p>
+<p><strong>.</strong> - any character</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="a-little-lie">A little lie</h3>
 <p>/The dog chased the cat<strong>.</strong>/</p>
 <p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h3 id="a-little-lie">A little lie</h3>
 <p>/The dog chased the cat<strong>.</strong>/</p>
 <p>&quot;<strong>The dog chased the cate</strong>rpillar. The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h3 id="a-little-lie">A little lie</h3>
 <p>/The dog chased the cat<strong>\.</strong>/</p>
 <p>&quot;<strong>The dog chased the cat.</strong> The cat chased the mouse. The mouse bit the dog while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h3 id="put-it-to-use">Put it to use</h3>
 <p>/the ./gi</p>
 <p>&quot;<strong>The m</strong>ouse bit <strong>the d</strong>og over there, while <strong>the d</strong>og chased <strong>the c</strong>at.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><h3 id="matching-more-than-one-character">Matching more than one character</h3>
-<p><strong>*</strong> represents 0 or more</p>
-<p><strong>+</strong> represents 1 or more</p>
+<p><strong>*</strong> - 0 or more</p>
+<p><strong>+</strong> - 1 or more</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><h3 id="-vs-">+ vs *</h3>
 <p>/img (.*)/ will match &quot;img &quot;</p>
 <p>/img (.+)/ will not match &quot;img &quot; but will match &quot;img cat&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h3 id="-example">* Example</h3>
 <p>/the .*/gi</p>
 <p>&quot;<strong>The mouse bit the dog over there, while the dog chased the cat.</strong>&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-34">
     <section class="slide-content"><h3 id="most-important-rule">Most Important Rule</h3>
 <p><strong>Regular Expressions will match the longest possible solution</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h3 id="use-our-word-boundaries">Use our word boundaries</h3>
 <p>/the \b.+\b/gi</p>
 <p>&quot;<strong>The mouse</strong> bit <strong>the dog</strong> over there, while <strong>the dog</strong> chased <strong>the cat</strong>.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h3 id="find-all-the-mice">Find all the mice</h3>
 <p>The hungry mouse bit the dog. The dog barked at the mouse.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-39">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h3 id="find-all-the-mice">Find all the mice</h3>
 <p>/the .* mouse/i</p>
 <p><strong>The hungry mouse bit the dog. The dog barked at the mouse</strong>.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h3 id="don-t-be-so-greedy">Don&#39;t be so greedy</h3>
 <p>/the .*? mouse/i</p>
 <p><strong>The hungry mouse</strong> bit the dog. The dog barked at the mouse.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-41">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h3 id="don-t-be-so-greedy">Don&#39;t be so greedy</h3>
 <p>/the .*? mouse/<strong>g</strong>i</p>
 <p><strong>The hungry mouse</strong> bit <strong>the dog. The dog barked at the mouse</strong>.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-42">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><h3 id="lazy-matchers">Lazy matchers</h3>
-<p><strong>*?</strong> represents 0 or more, fewest characters possible</p>
-<p><strong>+?</strong> represents 1 or more, fewest characters possible</p>
+<p><strong>*?</strong> - 0 or more, fewest characters possible</p>
+<p><strong>+?</strong> - 1 or more, fewest characters possible</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-43">
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><h3 id="multiple-lines">Multiple lines</h3>
 <p>The dog chased the cat. 
 The cat chased the mouse. 
 The mouse bit the dog while the dog chased the cat.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-44">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h3 id="multiple-lines">Multiple lines</h3>
 <p>/.*/</p>
 <p><strong>The dog chased the cat.</strong><br>The cat chased the mouse.<br>The mouse bit the dog while the dog chased the cat.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-45">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h3 id="m-flag">m flag</h3>
 <p>/.*/m</p>
 <p><strong>The dog chased the cat.</strong><br><strong>The cat chased the mouse.</strong><br><strong>The mouse bit the dog while the dog chased the cat.</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h3 id="start-and-end-of-lines">Start and End of lines</h3>
+<p><strong>^</strong> - start of line</p>
+<p><strong>$</strong> - end of line</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h3 id="start-and-end-of-lines">Start and End of lines</h3>
+<p>/^The .* cat\.$/</p>
+<p><strong>The dog chased the cat.</strong><br>The cat chased the mouse.<br><strong>The mouse bit the dog while the dog chased the cat.</strong></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-46">
@@ -669,55 +669,55 @@ The mouse bit the dog while the dog chased the cat.</p>
   </div>
   <div class="slide hidden" id="slide-47">
     <section class="slide-content"><h3 id="expected-characters">Expected characters</h3>
-<p><strong>[</strong> and <strong>]</strong> represent a range of values to match</p>
+<p><strong>[</strong> and <strong>]</strong> - a range of values to match</p>
 <p>[0123456789] - only numbers accepted<br>[abcdefghijklmnopqrstuvwxyz]</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-48">
-    <section class="slide-content"><h3 id="unicode-characters">Unicode characters</h3>
-<p><strong>\u00A9</strong>    - ©</p>
+    <section class="slide-content"><h3 id="shorthand">Shorthand</h3>
+<p><strong>[</strong> and <strong>]</strong> - a range of values to match</p>
+<p>[0-9] - only numbers accepted<br>[a-z] and [A-Z] - lowercase and uppercase</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-49">
-    <section class="slide-content"><h3 id="shorthand">Shorthand</h3>
-<p><strong>[</strong> and <strong>]</strong> represent a range of values to match</p>
-<p>[0-9] - only numbers accepted<br>[a-z] and [A-Z]</p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-50">
     <section class="slide-content"><h3 id="combining">Combining</h3>
 <p><strong>[</strong> and <strong>]</strong> represent a range of values to match</p>
 <p>[0-9a-zA-Z] - only numbers, lowercase and uppercase letters</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-51">
+  <div class="slide hidden" id="slide-50">
     <section class="slide-content"><h3 id="even-shorterhand">Even shorterhand</h3>
 <p><strong>\d</strong> - Digit, equalivalent to [0-9]</p>
 <p><strong>\w</strong> - Word, equivalent to [0-9a-zA-Z_]</p>
 <p><strong>\s</strong> - Space, equivalent to [ \t\r\n]</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-52">
+  <div class="slide hidden" id="slide-51">
     <section class="slide-content"><h3 id="unwanted-characters">Unwanted characters</h3>
 <p>&quot;The mouse bit the dog over there, while the dog chased the cat.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-53">
+  <div class="slide hidden" id="slide-52">
     <section class="slide-content"><h3 id="unwanted-characters">Unwanted characters</h3>
 <p>/[^,.]+/g</p>
 <p>&quot;<strong>The mouse bit the dog over there</strong>, <strong>while the dog chased the cat</strong>.&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-54">
+  <div class="slide hidden" id="slide-53">
     <section class="slide-content"><h3 id="word-boundary">Word boundary</h3>
 <p><strong>\b</strong> - [^,.\s]</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-55">
+  <div class="slide hidden" id="slide-54">
     <section class="slide-content"><h3 id="unwanted-shorthand">Unwanted shorthand</h3>
 <p><strong>\D</strong> - [^\d]</p>
 <p><strong>\W</strong> - [^\w]</p>
 <p><strong>\S</strong> - [^\s]</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><h3 id="unicode-characters">Unicode characters</h3>
+<p><strong>\u00A9</strong>    - ©</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-56">
@@ -793,25 +793,30 @@ The mouse bit the dog while the dog chased the cat.</p>
   </div>
   <div class="slide hidden" id="slide-68">
     <section class="slide-content"><h3 id="review-thus-far">Review thus far</h3>
-<p><strong>+</strong> -  1 or more<br><strong>*</strong> - 0 or more<br><strong>?</strong> - 0 or 1<br><strong>*?</strong> - 0 or more, fewest characters possible<br><strong>+?</strong> - 1 or more, fewest characters possible
-<strong>{2,5}</strong> - at least 2 but no more than 5</p>
+<p><strong>+</strong> -  1 or more<br><strong>*</strong> - 0 or more<br><strong>?</strong> - 0 or 1<br><strong>{2,5}</strong> - at least 2 but no more than 5</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-69">
-    <section class="slide-content"><h3 id="questions-">Questions?</h3>
+    <section class="slide-content"><h3 id="review-thus-far">Review thus far</h3>
+<p><strong>*?</strong> - 0 or more, fewest characters possible<br><strong>+?</strong> - 1 or more, fewest characters possible  </p>
+<p><strong>^</strong> - start of line<br><strong>$</strong> - end of line</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-70">
+    <section class="slide-content"><h3 id="questions-">Questions?</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-71">
     <section class="slide-content"><h3 id="but-wait-theres-more">But wait theres more</h3>
 <p>So far we&#39;ve only talked about testing for existance, now let&#39;s find things!</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-71">
+  <div class="slide hidden" id="slide-72">
     <section class="slide-content"><h3 id="phone-number-example">Phone number example</h3>
 <p>/\d{3}-?\d{3}-?\d{4}/g - proves existance of a phone number</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-72">
+  <div class="slide hidden" id="slide-73">
     <section class="slide-content"><h3 id="but-what-is-that-phone-number">But what is that phone number</h3>
 <p>Match - the individual result of a regex</p>
 <p>/\d{3}-?\d{3}-?\d{4}/g</p>
@@ -819,14 +824,14 @@ The mouse bit the dog while the dog chased the cat.</p>
 <p>Match #1: 5555555555<br>Match #2: 555-555-5555</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-73">
+  <div class="slide hidden" id="slide-74">
     <section class="slide-content"><h3 id="get-phone-number-with-label">Get phone number with label</h3>
 <p>/cell \d{3}-?\d{3}-?\d{4}/g</p>
 <p>&quot;You can call my <strong>cell 5555555555</strong> or my home 555-555-5555 at any time&quot;</p>
 <p>Match: cell 5555555555</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-74">
+  <div class="slide hidden" id="slide-75">
     <section class="slide-content"><h3 id="use-groups">Use groups</h3>
 <p>/cell (\d{3}-?\d{3}-?\d{4})/g</p>
 <p>&quot;You can call my <strong>cell 5555555555</strong> or my home 555-555-5555 at any time&quot;</p>
@@ -834,7 +839,7 @@ The mouse bit the dog while the dog chased the cat.</p>
 Group 1: 5555555555</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-75">
+  <div class="slide hidden" id="slide-76">
     <section class="slide-content"><h3 id="group-0">Group 0</h3>
 <p>/cell (\d{3}-?\d{3}-?\d{4})/g</p>
 <p>&quot;You can call my <strong>cell 5555555555</strong> or my home 555-555-5555 at any time&quot;</p>
@@ -843,7 +848,7 @@ Group 1: 5555555555
 Group 0: cell 5555555555</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-76">
+  <div class="slide hidden" id="slide-77">
     <section class="slide-content"><h3 id="combined-groups">Combined groups</h3>
 <p>/cell ((\d{3})-?\d{3}-?\d{4})(.*)/g</p>
 <p>&quot;You can call my <strong>cell 3135555555 or my home 555-555-5555 at any time</strong>&quot;</p>
@@ -852,7 +857,7 @@ Group 2: 313
 Group 3: &quot; or my home 555-555-5555 at any time&quot;</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-77">
+  <div class="slide hidden" id="slide-78">
     <section class="slide-content"><h3 id="named-groups-">Named groups*</h3>
 <p>/cell ((?<areaCode>\d{3})-?\d{3}-?\d{4})/g</p>
 <p>&quot;You can call my <strong>cell 3135555555</strong> or my home 555-555-5555 at any time&quot;</p>
@@ -862,14 +867,14 @@ Group areaCode: 313</p>
 <p><em>* named groups aren&#39;t supported on every platform</em></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-78">
+  <div class="slide hidden" id="slide-79">
     <section class="slide-content"><h3 id="ignore-group-non-capturing-group-">Ignore group (non-capturing group)</h3>
 <p>/cell (<strong>?:</strong>(\d{3})-?\d{3}-?\d{4})/g</p>
 <p>&quot;You can call my <strong>cell 3135555555</strong> or my home 555-555-5555 at any time&quot;</p>
 <p>Group 1: 313</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-79">
+  <div class="slide hidden" id="slide-80">
     <section class="slide-content"><h3 id="postive-lookahead">Postive lookahead</h3>
 <p><strong>(?=abc)</strong></p>
 <p>/\d{3}-?\d{3}-?\d{4}(?= x\d+)/g</p>
@@ -877,7 +882,7 @@ Group areaCode: 313</p>
 <p>Match: 313-555-5555</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-80">
+  <div class="slide hidden" id="slide-81">
     <section class="slide-content"><h3 id="negative-lookahead">Negative lookahead</h3>
 <p><strong>(?!abc)</strong></p>
 <p>/\d{3}-?\d{3}-?\d{4}(?! x\d+)/g</p>
@@ -885,23 +890,133 @@ Group areaCode: 313</p>
 <p>Match: 248-555-5555</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-81">
-    <section class="slide-content"><h3 id="use-the-result-of-a-group-in-the-search">Use the result of a group in the search</h3>
-<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit the the dog while the dog chased the cat.&quot;</p>
-</section>
-  </div>
   <div class="slide hidden" id="slide-82">
     <section class="slide-content"><h3 id="use-the-result-of-a-group-in-the-search">Use the result of a group in the search</h3>
+<p>&quot;The mouse bit the the dog while the dog chased the cat.&quot;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-83">
+    <section class="slide-content"><h3 id="use-the-result-of-a-group-in-the-search">Use the result of a group in the search</h3>
 <p>/(\w+)\s\1/g</p>
-<p>&quot;The dog chased the cat. The cat chased the mouse. The mouse bit <strong>the the</strong> dog while the dog chased the cat.&quot;</p>
+<p>&quot;The mouse bit <strong>the the</strong> dog while the dog chased the cat.&quot;</p>
 <p>Match: the the
 Group 1: the (the first one)</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-83">
+  <div class="slide hidden" id="slide-84">
+    <section class="slide-content"><h3 id="review">Review</h3>
+<p><strong>(abc)</strong> - a capture group<br><strong>(?:abc)</strong> - a non-capture group<br><strong>(?=abc)</strong> - positive lookahead<br><strong>(?!abc)</strong> - negatvie lookahead</p>
+<p>Groups are counted <strong>(</strong> from left to right</p>
+<h3 id="questions">Questions</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-85">
+    <section class="slide-content"><h3 id="url-example">URL Example</h3>
+<p>_^(?:(?:https?|ftp)://)(?:\S+(?::\S<em>)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-86">
+    <section class="slide-content"><h3 id="url-example">URL Example</h3>
+<p>/^(?:(?:https?|ftp)://)(?:\S+(?::\S<em>)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$/iuS</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-87">
+    <section class="slide-content"><h3 id="url-example">URL Example</h3>
+<p>/^(?:(?:https?|ftp)://)(?:\S+(?::\S<em>)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$/<strong>iuS</strong></p>
+<p>u - utf8<br>S - optimization</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-88">
+    <section class="slide-content"><h3 id="ignore-capture-groups">Ignore Capture Groups</h3>
+<p>/^(<strong>?:</strong>(<strong>?:</strong>https?|ftp)://)(<strong>?:</strong>\S+(<strong>?:</strong>:\S<em>)?@)?(<strong>?:</strong>(?!10(<strong>?:</strong>\.\d{1,3}){3})(?!127(<strong>?:</strong>\.\d{1,3}){3})(?!169\.254(<strong>?:</strong>\.\d{1,3}){2})(?!192\.168(<strong>?:</strong>\.\d{1,3}){2})(?!172\.(<strong>?:</strong>1[6-9]|2\d|3[0-1])(<strong>?:</strong>\.\d{1,3}){2})(<strong>?:</strong>[1-9]\d?|1\d\d|2[01]\d|22[0-3])(<strong>?:</strong>\.(<strong>?:</strong>1?\d{1,2}|2[0-4]\d|25[0-5])){2}(<strong>?:</strong>\.(<strong>?:</strong>[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(<strong>?:</strong>(<strong>?:</strong>[a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(<strong>?:</strong>\.(<strong>?:</strong>[a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(<strong>?:</strong>\.(<strong>?:</strong>[a-z\x{00a1}-\x{ffff}]{2,})))(<strong>?:</strong>:\d{2,5})?(<strong>?:</strong>/[^\s]*)?$/</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-89">
+    <section class="slide-content"><h3 id="start-and-end-characters">Start and End Characters</h3>
+<p><strong>/^</strong>((https?|ftp)://)(\S+(:\S<em>)?@)?((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?<strong>$/</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-90">
+    <section class="slide-content"><h3 id="url-example">URL Example</h3>
+<p>((https?|ftp)://)(\S+(:\S<em>)?@)?((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-91">
+    <section class="slide-content"><h3 id="http-https-ftp">http, https, ftp</h3>
+<p><strong>((https?|ftp)://)</strong>(\S+(:\S<em>)?@)?((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]*)?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-92">
+    <section class="slide-content"><h3 id="username-password-">username:password@</h3>
+<p>((https?|ftp)://)<strong>(\S+(:\S*)?@)?</strong>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)<em>(\.([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?(/[^\s]</em>)?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-93">
+    <section class="slide-content"><h3 id="the-domain">The Domain</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))<strong>|</strong>(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)*(\.([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-94">
+    <section class="slide-content"><h3 id="don-t-match-localhost">Don&#39;t match localhost</h3>
+<p><strong>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})</strong>([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)*(\.([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-95">
+    <section class="slide-content"><h3 id="ip-address">IP Address</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})<strong>([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))</strong>|(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)*(\.([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-96">
+    <section class="slide-content"><h3 id="subdomain-domain">Subdomain / Domain</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|<strong>(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)</strong>
+(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)</em>(\.([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-97">
+    <section class="slide-content"><h3 id="more-subdomains">More Subdomains</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)
+__(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)*__
+(\.([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-98">
+    <section class="slide-content"><h3 id="-com-org-gov-etc-">.com, .org, .gov, etc...</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)*<strong>(\.([a-z\x{00a1}-\x{ffff}]{2,})))</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-99">
+    <section class="slide-content"><h3 id="repeated-pattern">Repeated Pattern</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|<strong>(([a-z\x{00a1}-\x{ffff}0-9]+-?)<em>[a-z\x{00a1}-\x{ffff}0-9]+)(\.([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+)*(\.</strong>([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-100">
+    <section class="slide-content"><h3 id="refactored">Refactored</h3>
+<p>((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|<strong>(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+\.)+</strong>(([a-z\x{00a1}-\x{ffff}]{2,})))</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-101">
+    <section class="slide-content"><h3 id="port">Port</h3>
+<p>((https?|ftp)://)(\S+(:\S<em>)?@)?((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))<strong>(:\d{2,5})?</strong>(/[^\s]*)?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-102">
+    <section class="slide-content"><h3 id="the-rest-of-the-url">The rest of the URL</h3>
+<p>((https?|ftp)://)(\S+(:\S<em>)?@)?((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?<strong>(/[^\s]*)?</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-103">
+    <section class="slide-content"><h3 id="-s-s-">\S = [^\s]</h3>
+<p>((https?|ftp)://)(\S+(:\S<em>)?@)?((?!10(\.\d{1,3}){3})(?!127(\.\d{1,3}){3})(?!169\.254(\.\d{1,3}){2})(?!192\.168(\.\d{1,3}){2})(?!172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)</em>[a-z\x{00a1}-\x{ffff}0-9]+\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?<strong>(/\S*)?</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-104">
+    <section class="slide-content"><h3 id="questions-">Questions ?</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-105">
     <section class="slide-content"></section>
   </div>
-  <div class="slide hidden" id="slide-84">
+  <div class="slide hidden" id="slide-106">
     <section class="slide-content"><div class="author">
   <h1 class="name">Mark Schall</h1>
     <h3 class="twitter">
