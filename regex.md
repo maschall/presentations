@@ -4,7 +4,6 @@ author:
     twitter: mark_schall
     url: http://maschall.com
 output: regex.html
-controls: false
 
 --
 # Regular Expressions
@@ -305,7 +304,7 @@ __?__ - matches 0 or 1 instance
 ### Miss matching
 /(/d+-?)+/
 
-"You can call my cell __5555555555__ with your credit card __4444-4444-4444__-4444"
+"You can call my cell __5555555555__ with your credit card __4444-4444-4444-4444__"
 --
 ### Matching specific number of characters
 {3} - matches 3 and only 3 characters
@@ -376,7 +375,7 @@ Match: cell 5555555555
 
 "You can call my __cell 5555555555__ or my home 555-555-5555 at any time"
 
-Match: cell 5555555555
+Match: cell 5555555555  
 Group 1: 5555555555
 --
 ### Group 0
@@ -384,8 +383,8 @@ Group 1: 5555555555
 
 "You can call my __cell 5555555555__ or my home 555-555-5555 at any time"
 
-Match: cell 5555555555
-Group 1: 5555555555
+Match: cell 5555555555  
+Group 1: 5555555555  
 Group 0: cell 5555555555
 --
 ### Combined groups
@@ -393,18 +392,18 @@ Group 0: cell 5555555555
 
 "You can call my __cell 3135555555 or my home 555-555-5555 at any time__"
 
-Group 1: 3135555555
-Group 2: 313
-Group 3: " or my home 555-555-5555 at any time"
+Group 1: 3135555555  
+Group 2: 313  
+Group 3: " or my home 555-555-5555 at any time"  
 --
 ### Named groups*
-/cell ((?<areaCode>\d{3})-?\d{3}-?\d{4})/g
+/cell ((?\<areaCode\>\d{3})-?\d{3}-?\d{4})/g
 
 "You can call my __cell 3135555555__ or my home 555-555-5555 at any time"
 
-Group 1: 3135555555
-Group 2: 313
-Group areaCode: 313
+Group 1: 3135555555  
+Group 2: 313  
+Group areaCode: 313  
 
 _* named groups aren't supported on every platform_
 --
@@ -441,7 +440,7 @@ Match: 248-555-5555
 
 "The mouse bit __the the__ dog while the dog chased the cat."
 
-Match: the the
+Match: the the  
 Group 1: the (the first one)
 --
 ### Review
@@ -517,4 +516,3 @@ __(\\.([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*__
 ((https?|ftp)://)(\S+(:\S*)?@)?((?!10(\\.\d{1,3}){3})(?!127(\\.\d{1,3}){3})(?!169\\.254(\\.\d{1,3}){2})(?!192\\.168(\\.\d{1,3}){2})(?!172\\.(1[6-9]|2\d|3[0-1])(\\.\d{1,3}){2})([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(\\.([1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+\\.)+(([a-z\x{00a1}-\x{ffff}]{2,})))(:\d{2,5})?__(/\S*)?__
 --
 ### Questions ?
---
