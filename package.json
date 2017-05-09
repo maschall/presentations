@@ -1,0 +1,21 @@
+{
+  "name": "presentations",
+  "version": "1.0.0",
+  "description": "Mark Schall's presentations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maschall/presentations.git"
+  },
+  "keywords": [
+    "presentations"
+  ],
+  "author": "Mark Schall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maschall/presentations/issues"
+  },
+  "homepage": "https://github.com/maschall/presentations#readme",
+	"dependencies": {
+		"cleaver": ""
+	}
+}
